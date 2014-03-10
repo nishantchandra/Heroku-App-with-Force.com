@@ -1,12 +1,13 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
 <table class="table table-hover">
-<tr><th>Account</th><th>ID</th><th>Currently Active</th></tr>
+<tr><th>Account</th><th>ID</th><th>Currently Active</th><th>Phone</th></tr>
 <% @accounts.each do |account| %>
   <tr>
      <td><%= account.Name %></td>
      <td><%= account.Id %></td>
      <td><%= account.Active__c %></td>
+     <td><%= account.Phone %></td>
   </tr>
 <% end %>
 </table>
