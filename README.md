@@ -1,3 +1,14 @@
+STEPS to WORK with ANY Force.com APP
+
+1. Set Up Connected APP and give it callback URL
+2. CHANGE ENV Variables depending on what the Force.com APP gives you
+3. Remember to change them on Heroku as well
+4. bundle
+5. foreman start or push to heroku :)
+
+
+
+
 A really tiny web application that:
 
 * Performs OAuth with Force.com
