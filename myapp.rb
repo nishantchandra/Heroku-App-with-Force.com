@@ -69,7 +69,7 @@ class MyApp < Sinatra::Base
   post '/update' do
     Oobject = params[:object].to_s.capitalize
     Oid = params[:theId].to_s
-    Ofield = params[:fieldValue].to_s.capitalize
+    ##Ofield = params[:fieldValue].to_s.capitalize
     Ovalue = params[:newValue].to_s
     client.update(Oobject, Id: Oid, Name: Ovalue)
     redirect '/'
