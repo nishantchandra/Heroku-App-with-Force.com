@@ -40,6 +40,41 @@ class MyApp < Sinatra::Base
     erb :index
   end
 
+  get '/newAccount' do
+      erb :account
+  end
+
+  post '/newAccount' do
+     Aname = params[:accountName]
+     Aphone = params[:accountPhone]
+     client.create('Account', Name: Aname, Phone: Aphone)
+     redirect '/'
+  end
+
+  get '/destroy' do
+    erb :destroy
+  end
+
+  post '/destroy' do
+    Oobject = params[:object].to_s.capitalize
+    Oid = params[:theId].to_s
+    client.destroy(Oobject, Oid)
+    redirect '/'
+  end
+
+  get '/update' do
+    erb :update
+  end
+
+  post '/update' do
+    Oobject = params[:object].to_s.capitalize
+    Oid = params[:theId].to_s
+    Ofield = params[:fieldValue].to_s.capitalize
+    Ovalue = params[:newValue].to_s
+    client.update(Oobject, Id: Oid, Name: Ovalue)
+    redirect '/'
+  end
+
 
   get '/authenticate' do
     redirect "/auth/salesforce"
