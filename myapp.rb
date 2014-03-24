@@ -47,6 +47,7 @@ class MyApp < Sinatra::Base
   post '/newAccount' do
      Aname = params[:accountName]
      Aphone = params[:accountPhone]
+
      client.create('Account', Name: Aname, Phone: Aphone)
      redirect '/'
   end
