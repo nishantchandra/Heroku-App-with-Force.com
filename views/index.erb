@@ -10,7 +10,7 @@
 
 
 
-<table class="table table-hover">
+<table class="table table-hover" id="first">
 <tr><th>Account</th><th>ID</th><th>Currently Active</th><th>Phone</th></tr>
 <% @accounts.each do |account| %>
   <tr>
@@ -22,7 +22,7 @@
 <% end %>
 </table>
 
-<table class="table table-hover">
+<table class="table table-hover" id="second">
 <tr><th>Contact</th><th>ID</th></tr>
 <% @contacts.each do |contact| %>
   <tr>
@@ -40,6 +40,18 @@ background-color: #87CEEB !important;
 }
 
 </style>
+
+<script>
+	$(document).ready(function(){
+		 $('#second').hide(); 
+		 
+
+		 $("#first").click(function() {
+		 	 $("#first").hide(); 
+		 	 $("#second").fadeIn('slow'); 
+		}); 
+	})
+</script>
 
 
 
