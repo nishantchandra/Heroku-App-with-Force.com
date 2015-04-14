@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <ul id="bar" class="nav nav-pills">
 <li><a href="/" id="home" class="button update">Home</a></li>
@@ -9,7 +10,7 @@
 
 
 
-<table class="table table-hover">
+<table class="table table-hover" id="first">
 <tr><th>Account</th><th>ID</th><th>Currently Active</th><th>Phone</th></tr>
 <% @accounts.each do |account| %>
   <tr>
@@ -17,6 +18,16 @@
      <td><%= account.Id %></td>
      <td><%= account.Active__c %></td>
      <td><%= account.Phone %></td>
+  </tr>
+<% end %>
+</table>
+
+<table class="table table-hover" id="second">
+<tr><th>Contact</th><th>ID</th></tr>
+<% @contacts.each do |contact| %>
+  <tr>
+     <td><%= contact.Name %></td>
+     <td><%= contact.Id %></td>
   </tr>
 <% end %>
 </table>
@@ -29,6 +40,18 @@ background-color: #87CEEB !important;
 }
 
 </style>
+
+<script>
+	$(document).ready(function(){
+		 $('#second').hide(); 
+		 
+
+		 $("#first").click(function() {
+		 	 $("#first").hide(); 
+		 	 $("#second").fadeIn('slow'); 
+		}); 
+	})
+</script>
 
 
 
